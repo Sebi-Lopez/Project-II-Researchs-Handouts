@@ -1,0 +1,469 @@
+<!-- Config file for the game -->
+
+<config>
+  <app>
+    <title>RTS Group Movement</title>
+    <organization>UPC</organization>    
+  </app>
+	
+  <renderer>
+    <vsync value="0"/>
+    <capFrames value="60"/>
+  </renderer>
+
+  <window>
+    <resolution width="1024" height="768" scale="1"/>
+    <fullscreen value="false"/>
+    <borderless value="false"/>
+    <resizable value="false"/>
+    <fullscreen_window value="false"/>
+    <icon name="Assets/Sprites/Textures/Icon.bmp"/>
+  </window>
+
+  <map>
+    <folder>data/assets/textures/maps/</folder>
+  </map>
+
+  <scene>
+    <maps>
+      <warcraft name="warcraft_walk.tmx" active="1" tex="data/assets/textures/maps/warcraftDebugTex.png"/>
+    </maps>
+  </scene>
+
+  <particles>
+    <spritesheets>
+      <paws name="data/assets/textures/sprites/paws.png"/>
+    </spritesheets>
+    <animations>
+
+      <sheepPaws>
+        <up speed="1" loop="0">
+          <frame x="0" y="0" w="32" h="32"/>
+          <frame x="128" y="0" w="32" h="32"/>
+          <frame x="0" y="128" w="32" h="32"/>
+          <frame x="128" y="128" w="32" h="32"/>
+        </up>
+        <down speed="1" loop="0">
+          <frame x="0" y="32" w="32" h="32"/>
+          <frame x="128" y="32" w="32" h="32"/>
+          <frame x="0" y="160" w="32" h="32"/>
+          <frame x="128" y="160" w="32" h="32"/>
+        </down>
+        <left speed="1" loop="0">
+          <frame x="64" y="32" w="32" h="32"/>
+          <frame x="192" y="32" w="32" h="32"/>
+          <frame x="64" y="160" w="32" h="32"/>
+          <frame x="192" y="160" w="32" h="32"/>
+        </left>
+        <right speed="1" loop="0">
+          <frame x="64" y="0" w="32" h="32"/>
+          <frame x="192" y="0" w="32" h="32"/>
+          <frame x="64" y="128" w="32" h="32"/>
+          <frame x="192" y="128" w="32" h="32"/>
+        </right>
+
+        <upLeft speed="1" loop="0">
+          <frame x="32" y="32" w="32" h="32"/>
+          <frame x="160" y="32" w="32" h="32"/>
+          <frame x="32" y="160" w="32" h="32"/>
+          <frame x="160" y="160" w="32" h="32"/>
+        </upLeft>
+        <upRight speed="1" loop="0">
+          <frame x="32" y="0" w="32" h="32"/>
+          <frame x="160" y="0" w="32" h="32"/>
+          <frame x="32" y="128" w="32" h="32"/>
+          <frame x="160" y="128" w="32" h="32"/>
+        </upRight>
+        <downLeft speed="1" loop="0">
+          <frame x="96" y="32" w="32" h="32"/>
+          <frame x="224" y="32" w="32" h="32"/>
+          <frame x="96" y="160" w="32" h="32"/>
+          <frame x="224" y="160" w="32" h="32"/>
+        </downLeft>
+        <downRight speed="1" loop="0">
+          <frame x="96" y="0" w="32" h="32"/>
+          <frame x="224" y="0" w="32" h="32"/>
+          <frame x="96" y="128" w="32" h="32"/>
+          <frame x="224" y="128" w="32" h="32"/>
+        </downRight>
+      </sheepPaws>
+
+      <boarPaws>
+        <up speed="1" loop="0">
+          <frame x="0" y="64" w="32" h="32"/>
+          <frame x="128" y="64" w="32" h="32"/>
+          <frame x="0" y="192" w="32" h="32"/>
+          <frame x="128" y="192" w="32" h="32"/>
+        </up>
+        <down speed="1" loop="0">
+          <frame x="0" y="96" w="32" h="32"/>
+          <frame x="128" y="96" w="32" h="32"/>
+          <frame x="0" y="224" w="32" h="32"/>
+          <frame x="128" y="224" w="32" h="32"/>
+        </down>
+        <left speed="1" loop="0">
+          <frame x="64" y="96" w="32" h="32"/>
+          <frame x="192" y="96" w="32" h="32"/>
+          <frame x="64" y="224" w="32" h="32"/>
+          <frame x="192" y="224" w="32" h="32"/>
+        </left>
+        <right speed="1" loop="0">
+          <frame x="64" y="64" w="32" h="32"/>
+          <frame x="192" y="64" w="32" h="32"/>
+          <frame x="64" y="192" w="32" h="32"/>
+          <frame x="192" y="192" w="32" h="32"/>
+        </right>
+
+        <upLeft speed="1" loop="0">
+          <frame x="32" y="96" w="32" h="32"/>
+          <frame x="160" y="96" w="32" h="32"/>
+          <frame x="32" y="224" w="32" h="32"/>
+          <frame x="160" y="224" w="32" h="32"/>
+        </upLeft>
+        <upRight speed="1" loop="0">
+          <frame x="32" y="64" w="32" h="32"/>
+          <frame x="160" y="64" w="32" h="32"/>
+          <frame x="32" y="192" w="32" h="32"/>
+          <frame x="160" y="192" w="32" h="32"/>
+        </upRight>
+        <downLeft speed="1" loop="0">
+          <frame x="96" y="96" w="32" h="32"/>
+          <frame x="224" y="96" w="32" h="32"/>
+          <frame x="96" y="224" w="32" h="32"/>
+          <frame x="224" y="224" w="32" h="32"/>
+        </downLeft>
+        <downRight speed="1" loop="0">
+          <frame x="96" y="64" w="32" h="32"/>
+          <frame x="224" y="64" w="32" h="32"/>
+          <frame x="96" y="192" w="32" h="32"/>
+          <frame x="224" y="192" w="32" h="32"/>
+        </downRight>
+      </boarPaws>
+
+    </animations>
+  </particles>
+
+  <entities>
+    <spritesheets>
+      <footman name="data/assets/textures/sprites/footman.png"/>
+      <grunt name="data/assets/textures/sprites/grunt.png"/>
+      <critters name="data/assets/textures/sprites/critters.png"/>
+    </spritesheets>
+    <animations>
+      
+      <sheep>
+        <deathDownLeft speed="0" loop="0">
+          <frame x="0" y="0" w="30" h="31"/>
+        </deathDownLeft>
+        <deathUpRight speed="0" loop="0">
+          <frame x="30" y="0" w="30" h="31"/>
+        </deathUpRight>
+        <down speed="0" loop="0">
+          <frame x="60" y="0" w="30" h="31"/>
+        </down>
+        <right speed="0" loop="0">
+          <frame x="90" y="0" w="30" h="31"/>
+        </right>
+        <left speed="0" loop="0">
+          <frame x="120" y="0" w="30" h="31"/>
+        </left>
+        <upRight speed="0" loop="0">
+          <frame x="150" y="0" w="30" h="31"/>
+        </upRight>
+        <upLeft speed="0" loop="0">
+          <frame x="180" y="0" w="30" h="31"/>
+        </upLeft>
+
+        <deathDownRight speed="0" loop="0">
+          <frame x="0" y="31" w="30" h="31"/>
+        </deathDownRight>
+        <deathUpLeft speed="0" loop="0">
+          <frame x="30" y="31" w="30" h="31"/>
+        </deathUpLeft>
+        <up speed="0" loop="0">
+          <frame x="60" y="31" w="30" h="31"/>
+        </up>
+        <downRight speed="0" loop="0">
+          <frame x="90" y="31" w="30" h="31"/>
+        </downRight>
+        <downLeft speed="0" loop="0">
+          <frame x="120" y="31" w="30" h="31"/>
+        </downLeft>
+      </sheep>
+
+      <boar>
+        <deathDownLeft speed="0" loop="0">
+          <frame x="0" y="62" w="32" h="32"/>
+        </deathDownLeft>
+        <deathUpRight speed="0" loop="0">
+          <frame x="32" y="62" w="32" h="32"/>
+        </deathUpRight>
+        <down speed="0" loop="0">
+          <frame x="64" y="62" w="32" h="32"/>
+        </down>
+        <right speed="0" loop="0">
+          <frame x="96" y="62" w="32" h="32"/>
+        </right>
+        <left speed="0" loop="0">
+          <frame x="128" y="62" w="32" h="32"/>
+        </left>
+        <upRight speed="0" loop="0">
+          <frame x="160" y="62" w="32" h="32"/>
+        </upRight>
+        <upLeft speed="0" loop="0">
+          <frame x="192" y="62" w="32" h="32"/>
+        </upLeft>
+
+        <deathDownRight speed="0" loop="0">
+          <frame x="0" y="94" w="32" h="32"/>
+        </deathDownRight>
+        <deathUpLeft speed="0" loop="0">
+          <frame x="32" y="94" w="32" h="32"/>
+        </deathUpLeft>
+        <up speed="0" loop="0">
+          <frame x="64" y="94" w="32" h="32"/>
+        </up>
+        <downRight speed="0" loop="0">
+          <frame x="96" y="94" w="32" h="32"/>
+        </downRight>
+        <downLeft speed="0" loop="0">
+          <frame x="128" y="94" w="32" h="32"/>
+        </downLeft>
+      </boar>
+      
+      <footman>
+        <up speed="4" loop="1">
+          <frame x="2" y="4" w="69" h="54"/>
+          <frame x="2" y="61" w="69" h="54"/>
+          <frame x="2" y="118" w="69" h="54"/>
+          <frame x="2" y="169" w="69" h="54"/>
+          <frame x="2" y="219" w="69" h="54"/>
+        </up>
+        <upRight speed="4" loop="1">
+          <frame x="77" y="0" w="69" h="54"/>
+          <frame x="77" y="60" w="69" h="54"/>
+          <frame x="77" y="114" w="69" h="54"/>
+          <frame x="77" y="168" w="69" h="54"/>
+          <frame x="77" y="219" w="69" h="54"/>
+        </upRight>
+        <upLeft speed="4" loop="1">
+          <frame x="525" y="1" w="69" h="54"/>
+          <frame x="525" y="61" w="69" h="54"/>
+          <frame x="525" y="118" w="69" h="54"/>
+          <frame x="525" y="167" w="69" h="54"/>
+          <frame x="525" y="217" w="69" h="54"/>
+        </upLeft>
+        <down speed="4" loop="1">
+          <frame x="300" y="4" w="69" h="54"/>
+          <frame x="300" y="60" w="69" h="54"/>
+          <frame x="300" y="118" w="69" h="54"/>
+          <frame x="300" y="172" w="69" h="54"/>
+          <frame x="300" y="220" w="69" h="54"/>
+        </down>
+        <downRight speed="4" loop="1">
+          <frame x="225" y="2" w="69" h="54"/>
+          <frame x="225" y="64" w="69" h="54"/>
+          <frame x="225" y="120" w="69" h="54"/>
+          <frame x="225" y="167" w="69" h="54"/>
+          <frame x="225" y="215" w="69" h="54"/>
+        </downRight>
+        <downLeft speed="4" loop="1">
+          <frame x="377" y="0" w="69" h="54"/>
+          <frame x="377" y="65" w="69" h="54"/>
+          <frame x="377" y="119" w="69" h="54"/>
+          <frame x="377" y="168" w="69" h="54"/>
+          <frame x="377" y="217" w="69" h="54"/>
+        </downLeft>
+        <left speed="4" loop="1">
+          <frame x="451" y="0" w="69" h="54"/>
+          <frame x="451" y="60" w="69" h="54"/>
+          <frame x="451" y="114" w="69" h="54"/>
+          <frame x="451" y="168" w="69" h="54"/>
+          <frame x="451" y="219" w="69" h="54"/>
+        </left>
+        <right speed="4" loop="1">
+          <frame x="151" y="0" w="69" h="54"/>
+          <frame x="151" y="60" w="69" h="54"/>
+          <frame x="151" y="114" w="69" h="54"/>
+          <frame x="151" y="168" w="69" h="54"/>
+          <frame x="151" y="219" w="69" h="54"/>
+        </right>
+        <attackUp speed="2" loop="0">
+          <frame x="2" y="278" w="56" h="58"/>
+          <frame x="2" y="338" w="56" h="58"/>
+          <frame x="2" y="396" w="56" h="58"/>
+          <frame x="2" y="452" w="56" h="58"/>
+        </attackUp>
+        <attackUpRight speed="2" loop="0">
+          <frame x="77" y="275" w="69" h="54"/>
+          <frame x="77" y="329" w="69" h="54"/>
+          <frame x="77" y="396" w="69" h="54"/>
+          <frame x="77" y="452" w="69" h="54"/>
+        </attackUpRight>
+        <attackUpLeft speed="2" loop="0">
+          <frame x="525" y="275" w="69" h="54"/>
+          <frame x="525" y="329" w="69" h="54"/>
+          <frame x="525" y="396" w="69" h="54"/>
+          <frame x="525" y="452" w="69" h="54"/>
+        </attackUpLeft>
+        <attackDown speed="2" loop="0">
+          <frame x="300" y="275" w="69" h="54"/>
+          <frame x="300" y="328" w="69" h="54"/>
+          <frame x="300" y="398" w="69" h="54"/>
+          <frame x="300" y="466" w="69" h="54"/>
+        </attackDown>
+        <attackDownRight speed="2" loop="0">
+          <frame x="225" y="274" w="69" h="54"/>
+          <frame x="225" y="328" w="69" h="54"/>
+          <frame x="225" y="395" w="69" h="54"/>
+          <frame x="225" y="451" w="69" h="54"/>
+        </attackDownRight>
+        <attackDownLeft speed="2" loop="0">
+          <frame x="377" y="274" w="69" h="54"/>
+          <frame x="377" y="328" w="69" h="54"/>
+          <frame x="377" y="395" w="69" h="54"/>
+          <frame x="377" y="451" w="69" h="54"/>
+        </attackDownLeft>
+        <attackRight speed="2" loop="0">
+          <frame x="151" y="274" w="69" h="54"/>
+          <frame x="151" y="328" w="69" h="54"/>
+          <frame x="151" y="395" w="69" h="54"/>
+          <frame x="151" y="451" w="69" h="54"/>
+        </attackRight>
+        <attackLeft speed="2" loop="0">
+          <frame x="451" y="274" w="69" h="54"/>
+          <frame x="451" y="328" w="69" h="54"/>
+          <frame x="451" y="395" w="69" h="54"/>
+          <frame x="451" y="451" w="69" h="54"/>
+        </attackLeft>
+        <deathUp speed="1" loop="0">
+          <frame x="4" y="522" w="69" h="54"/>
+          <frame x="74" y="525" w="69" h="54"/>
+          <frame x="2" y="568" w="69" h="54"/>
+        </deathUp>
+        <deathDown speed="1" loop="0">
+          <frame x="144" y="253" w="69" h="54"/>
+          <frame x="221" y="253" w="69" h="54"/>
+          <frame x="289" y="253" w="69" h="54"/>
+        </deathDown>
+      </footman>
+      
+      <grunt>
+        <up speed="4" loop="1">
+          <frame x="15" y="4" w="46" h="49"/>
+          <frame x="15" y="57" w="46" h="49"/>
+          <frame x="15" y="112" w="46" h="49"/>
+          <frame x="15" y="167" w="46" h="49"/>
+          <frame x="15" y="221" w="46" h="49"/>
+        </up>
+        <upRight speed="4" loop="1">
+          <frame x="85" y="0" w="54" h="53"/>
+          <frame x="85" y="54" w="54" h="53"/>
+          <frame x="85" y="108" w="54" h="53"/>
+          <frame x="85" y="162" w="54" h="53"/>
+          <frame x="85" y="216" w="54" h="53"/>
+        </upRight>
+        <upLeft speed="4" loop="1">
+          <frame x="523" y="0" w="54" h="53"/>
+          <frame x="523" y="54" w="54" h="53"/>
+          <frame x="523" y="108" w="54" h="53"/>
+          <frame x="523" y="162" w="54" h="53"/>
+          <frame x="523" y="216" w="54" h="53"/>
+        </upLeft>
+        <down speed="4" loop="1">
+          <frame x="308" y="1" w="50" h="53"/>
+          <frame x="308" y="55" w="50" h="53"/>
+          <frame x="308" y="109" w="50" h="53"/>
+          <frame x="308" y="165" w="50" h="53"/>
+          <frame x="308" y="218" w="50" h="53"/>
+        </down>
+        <downRight speed="4" loop="1">
+          <frame x="229" y="0" w="54" h="53"/>
+          <frame x="229" y="56" w="54" h="53"/>
+          <frame x="229" y="109" w="54" h="53"/>
+          <frame x="229" y="162" w="54" h="53"/>
+          <frame x="229" y="215" w="54" h="53"/>
+        </downRight>
+        <downLeft speed="4" loop="1">
+          <frame x="377" y="0" w="50" h="53"/>
+          <frame x="377" y="56" w="50" h="53"/>
+          <frame x="377" y="109" w="50" h="53"/>
+          <frame x="377" y="162" w="50" h="53"/>
+          <frame x="377" y="215" w="50" h="53"/>
+        </downLeft>
+        <left speed="4" loop="1">
+          <frame x="450" y="0" w="51" h="52"/>
+          <frame x="450" y="54" w="51" h="52"/>
+          <frame x="450" y="108" w="51" h="52"/>
+          <frame x="450" y="162" w="51" h="52"/>
+          <frame x="450" y="216" w="51" h="52"/>
+        </left>
+        <right speed="4" loop="1">
+          <frame x="157" y="0" w="58" h="52"/>
+          <frame x="157" y="54" w="58" h="52"/>
+          <frame x="157" y="108" w="58" h="52"/>
+          <frame x="157" y="162" w="58" h="52"/>
+          <frame x="157" y="216" w="58" h="52"/>
+        </right>
+        <attackUp speed="2" loop="0">
+          <frame x="5" y="272" w="70" h="51"/>
+          <frame x="5" y="328" w="70" h="51"/>
+          <frame x="5" y="386" w="70" h="51"/>
+          <frame x="5" y="442" w="70" h="51"/>
+        </attackUp>
+        <attackUpRight speed="2" loop="0">
+          <frame x="79" y="272" w="71" h="51"/>
+          <frame x="79" y="328" w="71" h="51"/>
+          <frame x="79" y="386" w="71" h="51"/>
+          <frame x="79" y="440" w="71" h="51"/>
+        </attackUpRight>
+        <attackUpLeft speed="2" loop="0">
+          <frame x="521" y="272" w="71" h="51"/>
+          <frame x="521" y="328" w="71" h="51"/>
+          <frame x="521" y="386" w="71" h="51"/>
+          <frame x="521" y="440" w="71" h="51"/>
+        </attackUpLeft>
+        <attackDown speed="2" loop="0">
+          <frame x="301" y="271" w="72" h="51"/>
+          <frame x="301" y="326" w="72" h="51"/>
+          <frame x="301" y="383" w="72" h="51"/>
+          <frame x="301" y="455" w="72" h="51"/>
+        </attackDown>
+        <attackDownRight speed="2" loop="0">
+          <frame x="225" y="266" w="72" h="55"/>
+          <frame x="225" y="322" w="72" h="55"/>
+          <frame x="225" y="383" w="72" h="55"/>
+          <frame x="225" y="440" w="72" h="55"/>
+        </attackDownRight>
+        <attackDownLeft speed="2" loop="0">
+          <frame x="370" y="266" w="72" h="55"/>
+          <frame x="370" y="322" w="72" h="55"/>
+          <frame x="370" y="383" w="72" h="55"/>
+          <frame x="370" y="440" w="72" h="55"/>
+        </attackDownLeft>
+        <attackRight speed="2" loop="0">
+          <frame x="153" y="270" w="72" h="52"/>
+          <frame x="153" y="326" w="72" h="52"/>
+          <frame x="153" y="384" w="72" h="52"/>
+          <frame x="153" y="439" w="72" h="52"/>
+        </attackRight>
+        <attackLeft speed="2" loop="0">
+          <frame x="444" y="270" w="72" h="52"/>
+          <frame x="444" y="326" w="72" h="52"/>
+          <frame x="444" y="384" w="72" h="52"/>
+          <frame x="444" y="439" w="72" h="52"/>
+        </attackLeft>
+        <deathUp speed="1" loop="0">
+          <frame x="86" y="505" w="55" h="51"/>
+          <frame x="237" y="514" w="55" h="51"/>
+          <frame x="11" y="569" w="55" h="51"/>
+        </deathUp>
+        <deathDown speed="1" loop="0">
+          <frame x="13" y="506" w="47" h="55"/>
+          <frame x="168" y="508" w="47" h="55"/>
+          <frame x="306" y="514" w="47" h="55"/>
+        </deathDown>
+      </grunt>
+    </animations>
+  </entities>
+</config>
