@@ -135,7 +135,7 @@ bool j1EntityManager::Update(float dt)
 		}
 		//TODO 1- uncomment it when funtion is done 
 		//Only for debug then delete it
-		//Calculate_middle_Point();
+		middlePoint_Group = Calculate_middle_Point();
 	}
 	
 	
@@ -153,6 +153,9 @@ bool j1EntityManager::Update(float dt)
 	//TODO 2: Now for each entity find it's goal respecting original collocation
 	// Also should change state of the entities to getPaht state when a goal is asigned
 	
+
+
+
 	//TODO 6 
 	//Define a max offset ----------------------
 	//Units that are out should get a new goal
@@ -289,6 +292,12 @@ j1Entity* j1EntityManager::InThisTile_IsUnits(iPoint tile)
 
 fPoint j1EntityManager::Calculate_middle_Point()
 {
-	fPoint ret;
-	return ret;
+	fPoint ret = { 0,0 };
+
+	for (std::vector<j1Entity*>::iterator iter = selected_units.begin(); iter != selected_units.end(); ++iter)
+	{
+		ret += (*iter)->position;
+	}
+
+	return fPoint(ret.x / selected_units.size(), ret.y / selected_units.size());
 }
