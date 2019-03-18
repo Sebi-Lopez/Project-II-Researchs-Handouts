@@ -1,0 +1,91 @@
+<!-- Config file for the game -->
+
+<config>
+  <app>
+    <title>Buff Manager</title>
+  </app>
+	
+  <renderer>
+    <vsync value="true"/>
+  </renderer>
+
+  <window>
+    <resolution width="1024" height="720" scale="5"/>
+    <fullscreen value="false"/>
+    <borderless value="false"/>
+    <resizable value="true"/>
+    <fullscreen_window value="false"/>
+  </window>
+
+  <entity>
+    
+    <entity type ="character" x="40" y="119">
+      <name value="dwarf"/>
+      <pos x ="0" y="0"/>
+      <spritesheet path="Assets/Dwarf_Sprite_Sheet1.2v.png"/>
+      <animation>
+        <frame x="3" y="11" w="28" h="19"/>
+      </animation>
+      <health value ="20"/>
+      <stats>
+        <stat stat="attack" value ="10"/>
+        <stat stat="defense" value ="3"/>
+        <!--TODO 2: Add a stat through the XML-->
+        <stat stat="inteligence" value ="3"/>  
+      </stats>
+    </entity>
+    
+    <entity type ="character" x="100" y="119">
+      <name value="goblin"/>
+      <pos x ="0" y="0"/>
+      <spritesheet path="Assets/Imp Sprite Sheet.png"/>
+      <animation>
+        <frame x="170" y="212" w="15" h="12"/>
+      </animation>
+      <health value ="20"/>
+      <stats>
+        <stat stat="attack" value ="10"/>
+        <stat stat="defense" value ="3"/>
+      </stats>
+    </entity>
+    
+  </entity>
+
+  <buff>
+    <spell name="cut">
+      <function name="cut"/>
+      <atlas_icon row ="0" column="0"/>
+    </spell>
+    
+    <spell name="rage">
+      <function name="add_buff"/>
+      <atlas_icon row ="0" column="4"/>
+      <buff stat  ="attack" value ="3" type ="additive"/>
+      <buff stat ="defense" value="3" type="additive"/>
+    </spell>
+
+    <spell name="ilumination">
+      <function name="add_buff"/>
+      <atlas_icon row ="3" column="3"/>
+      <buff stat  ="attack" value ="0.5" type ="multiplicative"/>
+    </spell>
+    
+    <!--TODO 3: Add a spell through the XML-->
+    <!-- Spell should modify the stat you just created in TODO 2-->
+    <!-- Leave function name as "add buff"-->
+    <!-- Choose the sprite you prefer in the atlas-->
+
+    <spell name="max inteligence">
+      <function name="add_buff"/>
+      <atlas_icon row ="8" column="2"/>
+      <buff stat  ="inteligence" value ="10" type ="additive"/>
+    </spell>
+    <!--TODO 5: Create a new spell in the XML-->
+    <spell name="look">
+      <function name="look"/>
+      <atlas_icon row ="8" column="6"/>
+    </spell>
+    
+  </buff>
+
+</config>
