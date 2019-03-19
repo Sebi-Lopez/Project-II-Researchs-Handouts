@@ -154,13 +154,20 @@ bool j1EntityManager::Update(float dt)
 	// Also should change state of the entities to getPaht state when a goal is asigned
 	
 
-
-
 	//TODO 6 
 	//Define a max offset ----------------------
 	//Units that are out should get a new goal
 	if (App->input->GetMouseButtonState(1) == j1KeyState::KEY_DOWN && App->pathfinding->IsWalkable(App->input->GetMousePos_Tiles()))
 	{
+		iPoint mouse_goal;
+		App->input->GetMousePosition(mouse_goal.x, mouse_goal.y);
+		for (std::vector<j1Entity*>::iterator iter = selected_units.begin(); iter != selected_units.end(); ++iter)
+		{
+			iPoint offset = (*iter)->position.ReturniPoint() - middlePoint_Group.ReturniPoint();
+			Unit* selected_unit = (Unit*)(*iter);
+			selected_unit->goal = App->render->ScreenToWorld(mouse_goal.x + offset.x, mouse_goal.y + offset.y); 
+			selected_unit->state = getPath;
+		}
 
 	}
 	
